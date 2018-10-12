@@ -1,0 +1,134 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
+    padding: 10px;
+}
+
+.navigation {   /* trying to make this disappear and reappear */
+    background-color: #EAEAEA;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.navigation a { /* links in general */
+    float: left;
+    display: block;
+    color: #3F3F3F;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.navigation .burger { /*default not to appear*/
+    display: none;
+}
+
+.toTop {   /* anchor tags to top of page */
+    background-color: #3F3F3F;
+    border-radius: 5px;
+    display: relative;
+    height: 20px;
+    margin: 15px;
+    width: 20px;
+}
+
+/*section*/
+section {
+    align-items: center;
+    display: flex;
+    min-height: 350px;
+    margin: 50px auto;
+}
+
+#chief_end, 
+#sanctification {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#chief_end {
+    background-color: #EAEAEA;
+    color: #3F3F3F;
+}
+
+section > p {   /* center-align text not in first_section only */
+    text-align: center;
+}
+
+#first_section {
+    flex: 1;
+    margin: 50px auto;
+}
+
+#article_a1 {
+    flex: 0 0 180px;
+    margin: 2px;
+}
+
+#article_a2 {
+    flex: 1;
+    margin: 2px;
+}
+
+#article_a3 {
+    flex: 0 0 200px;
+    margin: 2px;
+}
+
+@media only screen and (max-width: 320px) {
+    #first_section {
+        display: block;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
+
+    #first_section {
+        flex-direction: row;
+    }
+
+    #article_a1 {
+        flex: 1 1 18%;
+    }
+
+    #article_a2 {
+        flex: 1 1 62%;
+    }
+    
+    #article_a3 {
+        flex: 1 1 20%;
+    }
+
+/* NAVBAR */
+    .navigation a:not(:first-child) {
+        display: none;
+    }
+    .navigation a.burger {
+        float: left;
+        display: block;
+    }
+
+    .navigation.media {
+        display: block;
+        width: 100%
+    }
+    .navigation.media a.burger {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .navigation.media a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
